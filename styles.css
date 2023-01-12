@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     background-color: #222222;
     border: none;
+    height: 17vh;
 }
 
 h1 {
@@ -29,6 +30,7 @@ h1 {
     font-size: 32px;
     text-align: center;
     margin-top: 5vh;
+    height: 3vh;
 }
 .buttons {
     display: flex;
@@ -36,7 +38,8 @@ h1 {
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    margin-top: 6vh;
+    margin-top: 1vh;
+    height: 60vh;
 }
 
 .rock, .paper, .scissors {
@@ -60,4 +63,26 @@ h1 {
     color: #ffa500;
     font-size: 32px;
     text-align: center;
+}
+
+footer {
+    margin: auto;
+    background-color: #222222;
+    height: 20vh;
+}
+
+.title {
+    font-size: 32px;
+    color:#f5f5f5;
+    text-align: center;
+    padding-top: 3vh;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 32px;
+    color: #ffa500;
 }

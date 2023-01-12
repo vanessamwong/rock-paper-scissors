@@ -20,14 +20,14 @@ function playRound(playerSelection, computerSelection) {
                ((playerSelection == "Scissors") && (computerSelection == "Rock")) ||
                ((playerSelection == "Paper") && (computerSelection == "Scissors"))) {
                 computerScore++;
+                document.getElementById("computer").innerHTML = "Computer: " + computerScore;
     } else {
         playerScore++;
+        document.getElementById("player").innerHTML = "Player: " + playerScore;
     }
 }
 
 function game() {
-
-    while (playerScore < 6 || computerScore < 6) {
         if ((playerScore == 5) || (computerScore == 5)) {
             
         } else {
@@ -35,9 +35,9 @@ function game() {
             paper.addEventListener("click", playRound("Paper", getComputerChoice()));
             scissors.addEventListener("click", playRound("Scissors", getComputerChoice()));    
         }
-    }
 }
 
+game();
 
 
 

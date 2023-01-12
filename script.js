@@ -1,6 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 const message = document.createElement("div");
 
 function getComputerChoice() {
@@ -11,72 +14,30 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == computerSelection) {
-        return "Tie game! \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-    } else if (playerSelection == "Rock") {
-        if (computerSelection == "Paper") {
-            computerScore += 1;
-            return "You lose! Paper beats rock! :( \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        } else {
-            playerScore += 1;
-            return "You win! Rock beats scissors! :D \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        }
-    } else if (playerSelection == "Paper") {
-        if (computerSelection == "Rock") {
-            playerScore += 1;
-            return "You win! Paper beats rock! :D \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        } else {
-            computerScore += 1;
-            return "You lose! Scissors beats paper! :( \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        }
+        playerScore = playerScore;
+        computerScore = computerScore;
+    } else if (((playerSelection == "Rock") && (computerSelection == "Paper")) ||
+               ((playerSelection == "Scissors") && (computerSelection == "Rock")) ||
+               ((playerSelection == "Paper") && (computerSelection == "Scissors"))) {
+                computerScore++;
     } else {
-        if (computerSelection == "Rock") {
-            computerScore += 1;
-            return "You lose! Rock beats scissors! :( \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        } else {
-            playerScore += 1;
-            return "You win! Scissors beats paper! :D \nThe score is now:\nPlayer: " + playerScore + " Computer: " + computerScore;
-        }
+        playerScore++;
     }
 }
 
 function game() {
 
-    for (let i = 0; i < 6; i++) {
-        if (i < 5) {
-            let playerSelection = prompt("Choose 'Rock', 'Paper' or 'Scissors'");
-            console.log(playRound(playerSelection, getComputerChoice()));
+    while (playerScore < 6 || computerScore < 6) {
+        if ((playerScore == 5) || (computerScore == 5)) {
+            
         } else {
-                if (playerScore == computerScore) {
-                    console.log("It's a tie! No winners here. :/");
-                } else if (playerScore > computerScore) {
-                    console.log("You win! Congrats! B)");
-                } else {
-                    console.log("You lose! Better luck next time! :P");
-                }
+            rock.addEventListener("click", playRound("Rock", getComputerChoice()));
+            paper.addEventListener("click", playRound("Paper", getComputerChoice()));
+            scissors.addEventListener("click", playRound("Scissors", getComputerChoice()));    
         }
     }
 }
 
 
-const rock = document.createElement("img");
-const paper = document.createElement("img");
-const scissors = document.createElement("img");
-const buttons = document.querySelectorAll("img");
-const main = document.createElement("div");
-
-rock.setAttribute("src", "images/rock.png");
-paper.setAttribute("src", "images/paper.png");
-scissors.setAttribute("src", "images/scissors.png");
-rock.setAttribute("id", "rock");
-paper.setAttribute("id", "paper");
-scissors.setAttribute("id", "scissors");
-
-
-rock.addEventListener("click", playRound("Rock", getComputerChoice()));
-paper.addEventListener("click", playRound("Paper", getComputerChoice()));
-scissors.addEventListener("click", playRound("Scissors", getComputerChoice()));
-
-main.appendChild(rock);
-body.appendChild(main);
 
 

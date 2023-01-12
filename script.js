@@ -57,14 +57,13 @@ function game() {
     }
 }
 
-game();
 
-const rock = document.createElement("input");
-const paper = document.createElement("input");
-const scissors = document.createElement("input");
-const buttons = document.querySelectorAll("input");
+const rock = document.createElement("img");
+const paper = document.createElement("img");
+const scissors = document.createElement("img");
+const buttons = document.querySelectorAll("img");
+const main = document.createElement("div");
 
-buttons.setAttribute("type", "image");
 rock.setAttribute("src", "images/rock.png");
 paper.setAttribute("src", "images/paper.png");
 scissors.setAttribute("src", "images/scissors.png");
@@ -72,20 +71,12 @@ rock.setAttribute("id", "rock");
 paper.setAttribute("id", "paper");
 scissors.setAttribute("id", "scissors");
 
-function selectMove(choice) {
-    if (choice == "Rock") {
-        playerSelection = "Rock";
-    } else if (choice == "Paper") {
-        playerSelection = "Paper";
-    } else {
-        playerSelection = "Scissors";
-    }
-}
 
 rock.addEventListener("click", playRound("Rock", getComputerChoice()));
 paper.addEventListener("click", playRound("Paper", getComputerChoice()));
 scissors.addEventListener("click", playRound("Scissors", getComputerChoice()));
 
-
+main.appendChild(rock);
+body.appendChild(main);
 
 

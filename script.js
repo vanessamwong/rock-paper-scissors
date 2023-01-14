@@ -1,9 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
 const message = document.createElement("div");
 
 function getComputerChoice() {
@@ -27,17 +24,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-        if ((playerScore == 5) || (computerScore == 5)) {
-            
-        } else {
-            rock.addEventListener("click", playRound("Rock", getComputerChoice()));
-            paper.addEventListener("click", playRound("Paper", getComputerChoice()));
-            scissors.addEventListener("click", playRound("Scissors", getComputerChoice()));    
-        }
-}
-
-game();
 
 
 

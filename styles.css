@@ -42,7 +42,7 @@ h1 {
     height: 60vh;
 }
 
-.rock, .paper, .scissors {
+#rock, #paper, #scissors {
     flex: none;
     width: 15vw;
     border-radius: 20px;

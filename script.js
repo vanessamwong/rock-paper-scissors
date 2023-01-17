@@ -7,13 +7,13 @@ const result = document.querySelector(".prompt");
 const your_score = document.getElementById("player");
 const cpu_score = document.getElementById("computer");
 
-const message = document.createElement("div");
-
+// Generates a random choice for the computer player
 function getComputerChoice() {
     const options = ["Rock", "Paper", "Scissors"];
     return options[Math.floor(Math.random() * 3)];
 }
 
+// Handles the possible outcomes of the game
 function win(playerSelection, computerSelection) {
     playerScore++;
     your_score.innerHTML = "PLAYER: " + playerScore;
@@ -34,6 +34,7 @@ function tie(playerSelection, computerSelection) {
     result.innerHTML = "Tie game!";
 }
 
+// Main game
 function game (playerSelection) {
     const computerSelection = getComputerChoice();
     switch (playerSelection + computerSelection) {
@@ -67,6 +68,5 @@ function main() {
     })
 
 }
-
 
 main();

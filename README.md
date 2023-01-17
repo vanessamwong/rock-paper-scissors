@@ -1,1 +1,3 @@
 # rock-paper-scissors
+
+In my opinion, this project ROCKS! Haha, get it, because, y'know, rocks, as in like rock, paper, scissors, like the game... ha...
